@@ -1,5 +1,7 @@
 var inquirer = require('inquirer')
 
+
+
 inquirer
     .prompt([{
             type: 'input',
@@ -18,9 +20,9 @@ inquirer
         },
         {
             type: 'list',
-            message: 'What is your Role?',
+            message: 'What is your Title',
             choices: ['Manager', 'Engineer', 'Intern'],
-            name: 'role'
+            name: 'Title'
         },
 
         {
@@ -28,7 +30,7 @@ inquirer
             message: 'what is your office number?',
             name: 'officeNumber',
             when: function(answers) {
-                return answers.Role === "Manager";
+                return answers.Title === "Manager";
             }
 
 
@@ -38,7 +40,7 @@ inquirer
             message: 'what is your gitHub UserName?',
             name: 'gitHub',
             when: function(answers) {
-                return answers.Role === "Engineer";
+                return answers.Title === "Engineer";
             }
 
 
@@ -49,7 +51,7 @@ inquirer
             message: 'what school do you attened?',
             name: 'school',
             when: function(answers) {
-                return answers.Role === "Intern";
+                return answers.Title === "Intern";
             }
 
 
@@ -60,3 +62,4 @@ inquirer
     .then(answers => {
         console.log(answers);
     })
+
