@@ -10,29 +10,29 @@ function questions() {
     inquirer
         .prompt([{
                 type: 'input',
-                message: 'What is your name?',
+                message: 'What is Employee name?',
                 name: 'name'
             },
             {
                 type: 'input',
-                message: 'What is your User ID?',
+                message: 'What is Employee ID?',
                 name: 'id'
             },
             {
                 type: 'input',
-                message: 'What is your Email Address?',
+                message: 'What is Employee Email Address?',
                 name: 'email'
             },
             {
                 type: 'list',
-                message: 'What is your Title',
+                message: 'What is Employee Title',
                 choices: ['Manager', 'Engineer', 'Intern'],
                 name: 'Title'
             },
 
             {
                 type: 'input',
-                message: 'what is your office number?',
+                message: 'what is Employee office number?',
                 name: 'officeNumber',
                 when: function(answers) {
                     return answers.Title === "Manager";
@@ -42,8 +42,8 @@ function questions() {
             },
             {
                 type: 'input',
-                message: 'what is your gitHub UserName?',
-                name: 'gitHub',
+                message: 'what is Employee gitHub UserName?',
+                name: 'github',
                 when: function(answers) {
                     return answers.Title === "Engineer";
                 }
@@ -53,7 +53,7 @@ function questions() {
 
             {
                 type: 'input',
-                message: 'what school do you attened?',
+                message: 'what school do Employee attened?',
                 name: 'school',
                 when: function(answers) {
                     return answers.Title === "Intern";
